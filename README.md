@@ -1,7 +1,11 @@
 # ember-paint
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Following a tutorial on YouTube I created this to learn ember.
+
+https://www.youtube.com/watch?v=N4KrBuO0RRE
+
+https://github.com/GavinJoyce/ember-kids-painting-game
+
 
 ## Prerequisites
 
