@@ -1,0 +1,39 @@
+<div class="pin fixed flex-col">
+  <div class="flex-shrink flex bg-black min-h-16">
+    <div class="flex-1 flex p-4 {{if game.isComplete "bg-green" "bg-black"}}">
+      <button
+        class="flex-shrink w-1/4 bg-pink hover:bg-pink-light text-white border-pink-lighter font-bold py-2 px-4 rounded" 
+        onclick={{action "newGame"}}>
+        New Game
+      </button>
+      
+      <div class="flex-1 text-center m-auto text-white">
+        {{#if game.isComplete}}
+          <h1>You win!</h1>
+        {{else}}
+          <h3>{{game.correctCellCount}} of 100</h3>
+        {{/if}}
+      </div>
+
+    </div>
+    <div class="flex-1 bg-pink">
+      <ColorPicker @color={{color}} @onChange={{action (mut color)}} />
+    </div>
+  </div>
+  <div class="flex-1 flex bg-grey-lighter">
+    <div class="flex-1 border-r-2 border-gray-dark border-dashed p-4">
+      <div class="p-16">
+        <PictureGrid @picture={{game.templatePicture}}/>
+      </div>
+    </div>
+    <div class="flex-1 p4">
+      <div class="p8">
+        <PictureGrid 
+          @picture={{game.playerPicture}} 
+          @isEditable={{true}} 
+          @color={{color}}
+          @onCellChange={{action "changeCellColor"}}/>
+      </div>
+    </div>
+  </div>
+</div>
